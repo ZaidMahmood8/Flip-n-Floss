@@ -93,17 +93,21 @@ The data used for this dashboard was **simulated based on the structure and sche
 
 ## Data Relationships
 
+
 | From Table                 | From Column        | To Table                  | To Column          | Cardinality   | Direction | Active | Description                                          |
 |---------------------------|--------------------|---------------------------|--------------------|---------------|-----------|--------|------------------------------------------------------|
-| students                  | id                 | transactions              | student            | One-to-Many   | →         | Yes    | Connects each student with their transactions        |
-| students                  | id                 | course_progress           | userid             | One-to-Many   | →         | No     | Maps course progress to the student                 |
-| transactions              | customer_id        | parents                   | customer_id        | Many-to-One   | →         | No     | Links transactions to parents                       |
-| transactions              | classroom          | students                  | classroom          | Many-to-One   | →         | Yes    | Maps transactions to student classrooms             |
-| course_progress           | classroom          | students                  | classroom          | Many-to-One   | →         | Yes    | Connects progress with student classroom            |
-| teachers                  | classroom          | students                  | classroom          | Many-to-One   | →         | Yes    | Relates teachers to students via classroom          |
-| teachers                  | classroom          | course_progress           | classroom          | One-to-Many   | →         | Yes    | Relates teachers to course progress                 |
-| courses                   | course_id          | course_progress           | course_id          | One-to-Many   | →         | Yes    | Tracks which course is being progressed             |
-| students                  | id                 | student_reward_purchases  | userid             | One-to-Many   | →         | Yes    | Links students to their reward purchases            |
+| students                  | id                 | transactions              | student            | One-to-Many   | →         | Yes    | Connects students with their transaction records     |
+| students                  | id                 | course_progress           | userid             | One-to-Many   | →         | Yes    | Maps course progress entries to students             |
+| students                  | classroom          | transactions              | classroom          | One-to-Many   | →         | Yes    | Links student classroom to transactions              |
+| students                  | classroom          | teachers                  | classroom          | One-to-Many   | →         | Yes    | Relates students to teachers by classroom            |
+| students                  | classroom          | course_progress           | classroom          | One-to-Many   | →         | Yes    | Relates student classroom to course progress         |
+| students                  | id                 | student_reward_purchases  | userid             | One-to-Many   | →         | Yes    | Active link from students to their reward purchases  |
+| students                  | id                 | transactions              | userid             | One-to-Many   | →         | No     | Inactive: potential alternate link for user-based tx |
+| students                  | id                 | course_progress           | parent_id          | One-to-Many   | →         | No     | Inactive: secondary mapping path in course progress  |
+| student_reward_purchases | userid             | course_progress           | userid             | Many-to-One   | →         | No     | Inactive: potential reward-course association        |
+| student_reward_purchases | userid             | transactions              | userid             | Many-to-One   | →         | No     | Inactive: potential link from rewards to tx          |
+| transactions              | customer_id        | parents                   | customer_id        | Many-to-One   | →         | Yes    | Maps parent info for each transaction                |
+| courses                   | course_id          | course_progress           | course_id          | One-to-Many   | →         | Yes    | Tracks course progress per course                    |
 
 
 ---
