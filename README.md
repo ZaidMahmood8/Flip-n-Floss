@@ -13,8 +13,6 @@
 - [Data Sources](#data-sources)
 - [Data Relationships](#data-relationships)
 - [Troubleshooting](#troubleshooting)  
-- [Costs Involved](#costs-involved)  
-- [Passwords and Credentials](#passwords-and-credentials)  
 - [Contact Information](#contact-information)  
 - [Dashboard Visual Guide](#dashboard-visual-guide)
 
@@ -118,24 +116,10 @@ The data used for this dashboard was **simulated based on the structure and sche
 
 ---
 
-## Costs Involved
-
-- Power BI Pro License (per user) — handled by Ops  
-- Azure Database Hosting — billed monthly (contact IT)
-
----
-
-## Passwords and Credentials
-
-Stored securely in the organization’s password manager (e.g., Azure Key Vault, LastPass). Contact DevOps for access.
-
----
-
 ## Contact Information
 
-**Name**: *[Insert Contact Name]*  
-**Email**: *[insert.email@example.com]*  
-**GitHub**: [https://github.com/flipnfloss-team](https://github.com/flipnfloss-team)
+**Name**: *Zaid Mahmood, Alexandra Guion*  
+**Email**: *zaid.mahmood@mail.mcgill.ca, alexandra.guion@mail.mcgill.ca*  
 
 ---
 
